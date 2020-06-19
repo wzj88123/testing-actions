@@ -27,7 +27,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - uses: ethanchewy/test-composite@v9
+    - uses: ethanchewy/test-composite@v6
       
       with:
         your_name: "Octocat"
