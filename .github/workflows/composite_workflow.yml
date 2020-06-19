@@ -12,6 +12,7 @@ on:
 
 env:
   NAME1: test1
+  NAME3: test3
   SERVER: production
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -27,10 +28,11 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - uses: ethanchewy/test-composite@v10
-      
+    - uses: ethanchewy/test-composite@v11
       with:
         your_name: "Octocat"
+      env:
+        NAME3: test31
       
     # Runs a single command using the runners shell
     - name: step 1
@@ -44,3 +46,4 @@ jobs:
       run: |
         echo Server $SERVER
         echo Name1 $NAME1
+        echo Name3 $NAME3
