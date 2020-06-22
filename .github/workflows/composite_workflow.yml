@@ -47,5 +47,4 @@ jobs:
         echo Server $SERVER
         echo Name1 $NAME1
         echo Name3 $NAME3
-    - name: echo Workflow ${{env.NAME3}}
-      run: echo Workflow $NAME3
+    - run: echo Workflow ${{env.NAME3}}
