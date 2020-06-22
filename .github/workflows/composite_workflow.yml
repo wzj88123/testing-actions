@@ -28,7 +28,7 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - uses: ethanchewy/test-composite@v13
+    - uses: ethanchewy/test-composite@v14
       with:
         your_name: "Octocat"
       env:
@@ -42,8 +42,9 @@ jobs:
     - name: step 2
       run: echo Workflow step 2
     
-    - name: environment tests
-      run: |
+    - run: |
+        echo Workflow
         echo Server $SERVER
         echo Name1 $NAME1
         echo Name3 $NAME3
+    - run: echo Workflow Name3 $Name3
