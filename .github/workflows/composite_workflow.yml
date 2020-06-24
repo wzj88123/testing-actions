@@ -13,13 +13,20 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
-    - id: composite
+    - id: composite1
       uses: ethanchewy/test-composite@v16
       with:
         your_name: "Octocat"
       env:
         NAME3: testasdfasdfads
-    - run: random number ${{ steps.composite.outputs.random-number }}
+    - id: composite2
+      uses: ethanchewy/test-composite@v16
+      with:
+        your_name: "Octocat2"
+      env:
+        NAME3: skrtskrt
+    - run: composite1 random number ${{ steps.composite1.outputs.random-number }}
+    - run: composite2 random number ${{ steps.composite2.outputs.random-number }}
     - name: step 1
       run: echo Workflow step 1
     - name: step 2
