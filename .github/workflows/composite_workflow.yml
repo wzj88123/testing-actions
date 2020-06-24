@@ -19,7 +19,7 @@ jobs:
         your_name: "Octocat"
       env:
         NAME3: testasdfasdfads
-    - run: random number ${{ composite.outputs.random-number }}
+    - run: random number ${{ steps.composite.outputs.random-number }}
     - name: step 1
       run: echo Workflow step 1
     - name: step 2
