@@ -14,11 +14,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: composite1
-      uses: ethanchewy/test-composite@v15
+      uses: ethanchewy/test-composite@v17
       with:
         your_name: "Octocat"
       env:
         NAME3: testasdfasdfads
+    - name: test outputs
+      run: | 
+        echo test outputs random: ${{ steps.composite1.outputs.random-number}} 
+        echo test outputs food: ${{ steps.composite1.outputs.food}} 
 #     - id: composite2
 #       uses: ethanchewy/test-composite@v16
 #       with:
