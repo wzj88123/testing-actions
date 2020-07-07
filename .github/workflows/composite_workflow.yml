@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: composite1
-      uses: ethanchewy/test-composite@setenv4
+      uses: ethanchewy/test-composite@setenvtest1
       with:
         your_name: "Octocat"
       env:
