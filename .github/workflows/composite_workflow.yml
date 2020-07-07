@@ -14,12 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: composite1
-      uses: ethanchewy/test-composite@setenv1
+      uses: ethanchewy/test-composite@setenv2
       with:
         your_name: "Octocat"
       env:
         foo: this is foo
-    - run: echo printenv|sort
+    - run: printenv|sort
 #     - name: test outputs
 #       run: | 
 #         echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
