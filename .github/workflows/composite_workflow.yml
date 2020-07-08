@@ -20,10 +20,10 @@ jobs:
         your_name: "Octocat"
       env:
         foo: this is foo 2
-#     - name: test outputs
-#       run: | 
-#         echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
-#         echo test outputs food: ${{ steps.composite1.outputs.food}} 
+    - name: test outputs
+      run: | 
+        echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
+        echo test outputs food: ${{ steps.composite1.outputs.food}} 
 #     - id: composite2
 #       uses: ethanchewy/test-composite@v16
 #       with:
