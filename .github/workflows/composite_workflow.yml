@@ -12,7 +12,7 @@ jobs:
     - run: echo ::set-env name=foo::this is foo 1
     - run: echo current env.foo ${{ env.foo }}
     - id: composite1
-      uses: ethanchewy/testing-composite-errors@PostRunError
+      uses: ethanchewy/testing-composite-errors@PostRunError2
       with:
         your_name: "Octocat"
       env:
