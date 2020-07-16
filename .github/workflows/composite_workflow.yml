@@ -12,11 +12,12 @@ jobs:
     - run: echo ::set-env name=foo::this is foo 1
     - run: echo current env.foo ${{ env.foo }}
     - id: composite1
-      uses: ethanchewy/testing-composite-errors@PostRunError2
+      uses: ethanchewy/test-composite@outputs3
       with:
         your_name: "Octocat"
       env:
         foo: this is foo 2
+      timeout-minutes: 1
     - name: test outputs
       run: | 
         echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
