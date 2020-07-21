@@ -22,6 +22,7 @@ jobs:
       env:
         foo: this is foo 2
       timeout-minutes: 1
+    - run: dir
 #     - name: test outputs
 #       run: | 
 #         echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
