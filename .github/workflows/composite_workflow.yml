@@ -7,12 +7,16 @@ on:
 jobs:
   build:
     runs-on: self-hosted
+    defaults:
+      run:
+        shell: pwsh 
+        working-directory: foo
     steps:
     - uses: actions/checkout@v2
     - run: echo ::set-env name=foo::this is foo 1
     - run: echo current env.foo ${{ env.foo }}
     - id: composite1
-      uses: ethanchewy/test-composite@outputs3
+      uses: ethanchewy/test-composite@shell
       with:
         your_name: "Octocat"
       env:
