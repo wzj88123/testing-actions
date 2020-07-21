@@ -10,7 +10,7 @@ jobs:
     defaults:
       run:
         shell: pwsh 
-        working-directory: foo
+#         working-directory: foo
     steps:
     - uses: actions/checkout@v2
 #     - run: echo ::set-env name=foo::this is foo 1
