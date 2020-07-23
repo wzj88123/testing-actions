@@ -16,12 +16,12 @@ jobs:
     - run: echo ::set-env name=foo::this is foo 1
     - run: echo current env.foo ${{ env.foo }}
     - id: composite1
-      uses: ethanchewy/test-composite@outputs3
+      uses: ethanchewy/test-composite@recursion
       with:
         your_name: "Octocat"
       env:
         foo: this is foo 2
-      timeout-minutes: 1
+#       timeout-minutes: 1
 #     - run: dir
 #       if: always()
 #     - name: test outputs
