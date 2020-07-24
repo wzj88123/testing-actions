@@ -16,7 +16,7 @@ jobs:
 #     - run: echo ::set-env name=foo::this is foo 1
 #     - run: echo current env.foo ${{ env.foo }}
     - id: composite1
-      uses: ethanchewy/test-script@v10
+      uses: ethanchewy/test-script@v11
 #       with:
 #         your_name: "Octocat"
 #       env:
