@@ -13,32 +13,18 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
-    - id: composite1
-      uses: ethanchewy/test-composite@env7
+    - uses: ethanchewy/testing-composite-errors@json
       with:
         your_name: "Octocat"
       env:
-        NAME3: testasdfasdfads
-#     - name: test outputs
-#       run: | 
-#         echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
-#         echo test outputs food: ${{ steps.composite1.outputs.food}} 
-#     - id: composite2
-#       uses: ethanchewy/test-composite@v16
-#       with:
-#         your_name: "Octocat2"
-#       env:
-#         NAME3: skrtskrt
-#     - run: composite1 random number ${{ steps.composite1.outputs.random-number }}
-#     - run: composite2 random number ${{ steps.composite2.outputs.random-number }}
-#     - name: step 1
-#       run: echo Workflow step 1
-#     - name: step 2
-#       run: echo Workflow step 2
-#     - run: |
-#         echo Workflow
-#         echo Server $SERVER
-#         echo Name1 $NAME1
-#         echo Name3 $NAME3
-#     - run: echo Workflow ${{env.NAME3}}
-    - run: echo Server ${{env.SERVER}}
+        NAME3: test31
+    - name: step 1
+      run: echo Workflow step 1
+    - name: step 2
+      run: echo Workflow step 2
+    - run: |
+        echo Workflow
+        echo Server $SERVER
+        echo Name1 $NAME1
+        echo Name3 $NAME3
+    - run: echo Workflow ${{env.NAME3}}
