@@ -16,7 +16,7 @@ jobs:
     - run: echo ::set-env name=foo::this is foo 1
     - run: echo current env.foo ${{ env.foo }}
     - id: composite1
-      uses: ethanchewy/test-composite@outputs3
+      uses: ethanchewy/test-composite@outputs4
       with:
         your_name: "Octocat"
       env:
@@ -24,8 +24,8 @@ jobs:
 #       timeout-minutes: 1
 #     - run: dir
 #       if: always()
-#     - name: test outputs
-#       run: | 
-#         echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
-#         echo test outputs food: ${{ steps.composite1.outputs.food}} 
+    - name: test outputs
+      run: | 
+        echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
+        echo test outputs food: ${{ steps.composite1.outputs.food}} 
 #     - run: echo current env.foo ${{ env.foo }}
