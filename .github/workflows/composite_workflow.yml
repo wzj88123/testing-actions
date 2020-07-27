@@ -4,27 +4,28 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-env:
-  NAME1: test1
-  NAME3: test3
-  SERVER: production
 jobs:
   build:
     runs-on: self-hosted
+#     defaults:
+#       run:
+#         shell: pwsh 
+#         working-directory: foo
     steps:
     - uses: actions/checkout@v2
-    - uses: ethanchewy/testing-composite-errors@json
-      with:
-        your_name: "Octocat"
-      env:
-        NAME3: test31
-    - name: step 1
-      run: echo Workflow step 1
-    - name: step 2
-      run: echo Workflow step 2
-    - run: |
-        echo Workflow
-        echo Server $SERVER
-        echo Name1 $NAME1
-        echo Name3 $NAME3
-    - run: echo Workflow ${{env.NAME3}}
+#     - run: echo ::set-env name=foo::this is foo 1
+#     - run: echo current env.foo ${{ env.foo }}
+    - id: composite1
+      uses: ethanchewy/test-script@v18
+#       with:
+#         your_name: "Octocat"
+#       env:
+#         foo: this is foo 2
+#       timeout-minutes: 1
+#     - run: dir
+#       if: always()
+#     - name: test outputs
+#       run: | 
+#         echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
+#         echo test outputs food: ${{ steps.composite1.outputs.food}} 
+#     - run: echo current env.foo ${{ env.foo }}
