@@ -13,7 +13,7 @@ jobs:
     - run: echo ::set-env name=foo::this is foo 1
     - run: echo current env.foo ${{ env.foo }}
     - id: composite1
-      uses: ethanchewy/test-composite@recursion4
+      uses: ethanchewy/test-composite@recursion5
       with:
         your_name: "Octocat"
       env:
