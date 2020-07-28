@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    container: ubuntu:latest
+    container: swift:5.0-bionic
     runs-on: self-hosted
 #     defaults:
 #       run:
