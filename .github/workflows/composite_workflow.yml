@@ -6,9 +6,16 @@ on:
     branches: [ master ]
 jobs:
   build:
-    env:
-      TESTING_COMPOSITE_ACTIONS_ALPHA: 1
-    runs-on: windows-latest
+    container:
+      image: node:10.16-jessie
+      env:
+        NODE_ENV: development
+      ports:
+        - 80
+      volumes:
+        - my_docker_volume:/volume_mount
+      options: --cpus 1
+    runs-on: self-hosted
 #     defaults:
 #       run:
 #         shell: pwsh 
