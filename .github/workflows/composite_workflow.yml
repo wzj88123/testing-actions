@@ -1,3 +1,25 @@
+# name: CI
+# on:
+#   push:
+#     branches: [ master ]
+#   pull_request:
+#     branches: [ master ]
+# jobs:
+#   testing:
+#     container:
+#       image: ubuntu:latest
+#     runs-on: self-hosted
+# #     defaults:
+# #       run:
+# #         shell: pwsh 
+# #         working-directory: foo
+#     steps:
+#     - uses: actions/checkout@v2
+# #     - run: echo ::set-env name=foo::this is foo 1
+# #     - run: echo current env.foo ${{ env.foo }}
+#     - id: composite1
+#       uses: ethanchewy/test-script@v19
+
 name: CI
 on:
   push:
@@ -5,17 +27,15 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  testing:
-    container:
-      image: ubuntu:latest
+  build:
     runs-on: self-hosted
-#     defaults:
-#       run:
-#         shell: pwsh 
-#         working-directory: foo
     steps:
     - uses: actions/checkout@v2
-#     - run: echo ::set-env name=foo::this is foo 1
-#     - run: echo current env.foo ${{ env.foo }}
+    - run: echo ::set-env name=foo::this is foo 1
+    - run: echo current env.foo ${{ env.foo }}
     - id: composite1
-      uses: ethanchewy/test-script@v19
+      uses: ethanchewy/test-composite@composing
+      with:
+        your_name: "Octocat"
+      env:
+        foo: this is foo 2
