@@ -17,3 +17,5 @@ jobs:
 #     - run: echo current env.foo ${{ env.foo }}
     - id: composite1
       uses: ethanchewy/test-script@v18
+      env:
+        TESTING_COMPOSITE_ACTIONS_ALPHA: 1
