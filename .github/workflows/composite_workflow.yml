@@ -4,21 +4,24 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+env:
+  TESTING_COMPOSITE_ACTIONS_ALPHA: 1
 jobs:
   testing:
     container:
       image: ubuntu:latest
-    runs-on: [self-hosted, linux]
+#     runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, macos]
 #     defaults:
 #       run:
 #         shell: pwsh 
 #         working-directory: foo
     steps:
 #       - run: echo "::set-env name=TESTING_COMPOSITE_ACTIONS_ALPHA::1"
-#       - uses: ethanchewy/setup-runner@v1
-#         with:
-#           ref: testingScriptPRLinux
-#           token: ${{ github.token }}
+      - uses: ethanchewy/setup-runner@v1
+        with:
+          ref: testingScriptPRLinux
+          token: ${{ github.token }}
       - uses: actions/checkout@v2
 #     - run: echo ::set-env name=foo::this is foo 1
 #     - run: echo current env.foo ${{ env.foo }}
