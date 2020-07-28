@@ -6,10 +6,7 @@ on:
     branches: [ master ]
 jobs:
   build:
-    container:
-      image: ubuntu:latest
-      ports:
-        - 80
+    container: ubuntu:latest
     runs-on: self-hosted
 #     defaults:
 #       run:
