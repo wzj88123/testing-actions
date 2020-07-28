@@ -10,8 +10,8 @@ jobs:
   testing:
     container:
       image: ubuntu:latest
-#     runs-on: [self-hosted, linux]
-    runs-on: [self-hosted, macos]
+    runs-on: [self-hosted, linux]
+#     runs-on: [self-hosted, macos]
 #     defaults:
 #       run:
 #         shell: pwsh 
