@@ -6,6 +6,8 @@ on:
     branches: [ master ]
 jobs:
   testing:
+    env:
+      TESTING_COMPOSITE_ACTIONS_ALPHA: 1
     container:
       image: ubuntu:latest
     runs-on: ubuntu-latest
