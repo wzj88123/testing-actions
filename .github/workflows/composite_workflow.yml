@@ -6,8 +6,6 @@ on:
     branches: [ master ]
 jobs:
   testing:
-    env:
-      TESTING_COMPOSITE_ACTIONS_ALPHA: 1
     container:
       image: ubuntu:latest
     runs-on: ubuntu-latest
@@ -16,15 +14,16 @@ jobs:
 #         shell: pwsh 
 #         working-directory: foo
     steps:
-    - uses: ethanchewy/setup-runner@v1
-      with:
-        ref: testingScriptPRLinux
-        token: ${{ github.token }}
-    - uses: actions/checkout@v2
+      - run: echo "::set-env name=TESTING_COMPOSITE_ACTIONS_ALPHA::1"
+      - uses: ethanchewy/setup-runner@v1
+        with:
+          ref: testingScriptPRLinux
+          token: ${{ github.token }}
+      - uses: actions/checkout@v2
 #     - run: echo ::set-env name=foo::this is foo 1
 #     - run: echo current env.foo ${{ env.foo }}
-    - id: composite1
-      uses: ethanchewy/test-script@v19
+      - id: composite1
+        uses: ethanchewy/test-script@v19
 
 # name: CI
 # on:
