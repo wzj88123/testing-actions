@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: composite1
-        uses: ethanchewy/test-script@v19
+        uses: ethanchewy/test-script@v20
 
 # name: CI
 # on:
