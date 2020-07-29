@@ -1,7 +1,7 @@
 name: CI
 on: push
-env:
-  TESTING_COMPOSITE_ACTIONS_ALPHA: 1
+# env:
+#   TESTING_COMPOSITE_ACTIONS_ALPHA: 1
 
 jobs:
   testing:
@@ -9,5 +9,5 @@ jobs:
     steps:
       - uses: ethanchewy/setup-runner@v1
         with:
-          ref: ethanchewy/compositeScript
+          ref: testingScriptPRLinux
           token: ${{ secrets.RUNNER_TOKEN }}
