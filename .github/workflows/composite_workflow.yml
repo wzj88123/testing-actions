@@ -1,34 +1,34 @@
-# name: CI
-# on:
-#   push:
-#     branches: [ master ]
-#   pull_request:
-#     branches: [ master ]
-# jobs:
-#   build:
-#     runs-on: [self-hosted, macos]
-# #     defaults:
-# #       run:
-# #         shell: pwsh 
-# #         working-directory: foo
-#     steps:
-#     - uses: actions/checkout@v2
-#     - run: echo ::set-env name=foo::this is foo 1
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: [self-hosted, macos]
+#     defaults:
+#       run:
+#         shell: pwsh 
+#         working-directory: foo
+    steps:
+    - uses: actions/checkout@v2
+    - run: echo ::set-env name=foo::this is foo 1
+    - run: echo current env.foo ${{ env.foo }}
+    - id: composite1
+      uses: ethanchewy/test-composite@outputs4
+      with:
+        your_name: "Octocat"
+      env:
+        foo: this is foo 2
+#       timeout-minutes: 1
+#     - run: dir
+#       if: always()
+    - name: test outputs
+      run: | 
+        echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
+        echo test outputs food: ${{ steps.composite1.outputs.food}} 
 #     - run: echo current env.foo ${{ env.foo }}
-#     - id: composite1
-#       uses: ethanchewy/test-composite@outputs4
-#       with:
-#         your_name: "Octocat"
-#       env:
-#         foo: this is foo 2
-# #       timeout-minutes: 1
-# #     - run: dir
-# #       if: always()
-#     - name: test outputs
-#       run: | 
-#         echo test outputs random: ${{ steps.composite1.outputs.random_number}} 
-#         echo test outputs food: ${{ steps.composite1.outputs.food}} 
-# #     - run: echo current env.foo ${{ env.foo }}
 
 # name: CI
 # on:
@@ -48,22 +48,22 @@
 #       - id: composite1
 #         uses: ethanchewy/test-script@container
 
-name: CI
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-jobs:
-  build:
-    runs-on: [self-hosted, macos]
-    steps:
-    - uses: actions/checkout@v2
-    - run: echo ::set-env name=foo::this is foo 1
-    - run: echo current env.foo ${{ env.foo }}
-    - id: composite1
-      uses: ethanchewy/test-composite@composing
-      with:
-        your_name: "Octocat"
-      env:
-        foo: this is foo 2
+# name: CI
+# on:
+#   push:
+#     branches: [ master ]
+#   pull_request:
+#     branches: [ master ]
+# jobs:
+#   build:
+#     runs-on: [self-hosted, macos]
+#     steps:
+#     - uses: actions/checkout@v2
+#     - run: echo ::set-env name=foo::this is foo 1
+#     - run: echo current env.foo ${{ env.foo }}
+#     - id: composite1
+#       uses: ethanchewy/test-composite@composing
+#       with:
+#         your_name: "Octocat"
+#       env:
+#         foo: this is foo 2
