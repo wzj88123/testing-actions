@@ -15,7 +15,8 @@ jobs:
     - uses: actions/checkout@v2
     - run: echo ::set-env name=foo::this is foo 1
     - run: echo current env.foo ${{ env.foo }}
-    - id: composite1
+    - name: TESTING
+      id: composite1
       uses: ethanchewy/test-composite@outputs4
       with:
         your_name: "Octocat"
