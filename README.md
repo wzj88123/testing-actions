@@ -1,1 +1,1 @@
-test outputs memmory
+testing composing 3
